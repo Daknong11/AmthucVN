@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâm Đồng Mới - Di sản Văn hóa & Phát triển Bền vững</title>
+    <meta name="description" content="Khám phá Lâm Đồng sau sáp nhập với nền văn hóa đa dạng của 40 dân tộc anh em và tiềm năng phát triển du lịch, nông nghiệp công nghệ cao.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset và biến CSS */
+        :root {
+            --primary-color: #1a6b3c; /* Xanh lá đậm - màu rừng núi */
+            --secondary-color: #e6b325; /* Vàng - màu nắng Đà Lạt */
+            --accent-color: #2c8c5a; /* Xanh lá nhạt */
+            --light-color: #f5f9f7;
+            --dark-color: #2d3e2f;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--dark-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .logo-text span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://gcs.tripi.vn/public-tripi/tripi-feed/img/475990zWm/anh-mo-ta.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Introduction Section */
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .intro-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .intro-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .intro-features {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .feature-icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        
+        .intro-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .intro-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Ethnic Groups Section */
+        .ethnic-section {
+            background-color: var(--light-color);
+        }
+        
+        .ethnic-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .ethnic-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .ethnic-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .ethnic-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .ethnic-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .ethnic-content {
+            padding: 20px;
+        }
+        
+        .ethnic-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .view-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .view-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Culture Section */
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .culture-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .culture-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .culture-image {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .culture-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .culture-content {
+            padding: 20px;
+            background-color: var(--white);
+        }
+        
+        .culture-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Video Section */
+        .video-section {
+            background-color: var(--light-color);
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-caption {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        /* Agriculture Section */
+        .agri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .agri-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .agri-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .agri-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .agri-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .agri-content {
+            padding: 20px;
+        }
+        
+        .agri-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .modal-subtitle {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .modal-details {
+            margin-top: 20px;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .footer-logo span {
+            color: var(--secondary-color);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .intro-image {
+                order: -1;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: var(--transition);
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.9rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .intro-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                padding: 20px;
+                width: 95%;
+            }
+            
+            .modal-image {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .modal-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal Popup -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <img id="modalImg" src="" alt="" class="modal-image">
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <h3 id="modalSubtitle" class="modal-subtitle"></h3>
+            <p id="modalDescription"></p>
+            <div class="modal-details" id="modalDetails">
+                <!-- Details will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <div class="logo-img">
+                    <i class="fas fa-mountain" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                </div>
+                <div class="logo-text">Lâm Đồng <span>Mới</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#ethnic">Dân tộc</a></li>
+                    <li><a href="#culture">Văn hóa</a></li>
+                    <li><a href="#agriculture">Nông nghiệp</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#contact" class="btn">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Lâm Đồng - Sức sống mới từ 40 dân tộc anh em</h1>
+                <p>Khám phá vẻ đẹp đa dạng văn hóa, tiềm năng du lịch và nông nghiệp công nghệ cao của Lâm Đồng sau sáp nhập. Nơi hội tụ tinh hoa của các dân tộc Kinh, M'Nông, Ê Đê, Tày, Khmer và nhiều dân tộc anh em khác.</p>
+                <div class="hero-buttons">
+                    <a href="#ethnic" class="btn">Khám phá văn hóa</a>
+                    <a href="#video" class="btn btn-secondary">Xem video</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lâm Đồng Sau Sáp Nhập</h2>
+                <p class="section-subtitle">Vùng đất hội tụ với hơn 40 dân tộc anh em cùng chung sống</p>
+            </div>
+            
+            <div class="intro-content">
+                <div class="intro-image" data-modal="dalat">
+                    <img src="https://ahanetworkvietnam.files.wordpress.com/2021/09/da-lat.jpg" alt="Thành phố Đà Lạt">
+                </div>
+                
+                <div class="intro-text">
+                    <h3>Vùng đất của sự đa dạng và hòa hợp</h3>
+                    <p>Lâm Đồng sau sáp nhập trở thành vùng đất đa dạng văn hóa với sự chung sống hòa hợp của hơn 40 dân tộc anh em. Mỗi dân tộc mang đến những nét văn hóa độc đáo, góp phần tạo nên bức tranh văn hóa đa sắc màu.</p>
+                    <p>Với thế mạnh về khí hậu, cảnh quan thiên nhiên hùng vĩ và nền văn hóa đa dạng, Lâm Đồng đang hướng tới phát triển bền vững, bảo tồn các giá trị văn hóa truyền thống.</p>
+                    
+                    <div class="intro-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h4>40+ Dân tộc</h4>
+                                <p>Kinh, M'Nông, Ê Đê, Tày, Khmer và nhiều dân tộc khác</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-mountain"></i></div>
+                            <div>
+                                <h4>Đa dạng địa hình</h4>
+                                <p>Núi cao, cao nguyên, thung lũng và hồ nước</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                            <div>
+                                <h4>Khí hậu ôn hòa</h4>
+                                <p>Khí hậu mát mẻ quanh năm, lý tưởng cho du lịch</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+                            <div>
+                                <h4>Nông nghiệp công nghệ cao</h4>
+                                <p>Vựa rau hoa, cà phê, chè chất lượng cao</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethnic Groups Section -->
+    <section class="section ethnic-section" id="ethnic">
+        <div class="container">
+            <div class="section-title">
+                <h2>Các Dân Tộc Anh Em</h2>
+                <p class="section-subtitle">Khám phá sự đa dạng văn hóa của hơn 40 dân tộc đang chung sống tại Lâm Đồng</p>
+            </div>
+            
+            <div class="ethnic-groups">
+                <div class="ethnic-card">
+                    <img src="http://sukienquanhta.net/wp-content/uploads/2022/07/Dan-toc-kinh-2.jpg" 
+                         alt="Dân tộc Kinh" 
+                         class="ethnic-image"
+                         data-modal="kinh">
+                    <div class="ethnic-content">
+                        <h3>Dân tộc Kinh</h3>
+                        <p>Chiếm đa số với nền văn hóa phong phú, đóng vai trò chủ đạo trong phát triển kinh tế - xã hội của Lâm Đồng.</p>
+                        <a href="#" class="view-more" data-modal="kinh">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+                
+                <div class="ethnic-card">
+                    <img src="https://topasecolodge.com/wp-content/uploads/2022/07/dan-toc-mong-den-sapa-black-hmong-sapa.jpeg" 
+                         alt="Dân tộc M'Nông" 
+                         class="ethnic-image"
+                         data-modal="mnong">
+                    <div class="ethnic-content">
+                        <h3>Dân tộc M'Nông</h3>
+                        <p>Một trong những dân tộc bản địa quan trọng với nghề dệt thổ cẩm truyền thống và văn hóa cồng chiêng độc đáo.</p>
+                        <a href="#" class="view-more" data-modal="mnong">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+                
+                <div class="ethnic-card">
+                    <img src="https://iced.edu.vn/wp-content/uploads/2024/11/dan-toc-e-de-1.jpg" 
+                         alt="Dân tộc Ê Đê" 
+                         class="ethnic-image"
+                         data-modal="ede">
+                    <div class="ethnic-content">
+                        <h3>Dân tộc Ê Đê</h3>
+                        <p>Nổi tiếng với kiến trúc nhà dài, văn hóa cồng chiêng và các lễ hội truyền thống đặc sắc.</p>
+                        <a href="#" class="view-more" data-modal="ede">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+                
+                <div class="ethnic-card">
+                    <img src="https://s3-ap-southeast-1.amazonaws.com/mytourcdn.com/resources/pictures/locations/ijn1410840980.jpg" 
+                         alt="Dân tộc Tày" 
+                         class="ethnic-image"
+                         data-modal="tay">
+                    <div class="ethnic-content">
+                        <h3>Dân tộc Tày</h3>
+                        <p>Với nghề dệt thổ cẩm tinh xảo, hát then đàn tính và ẩm thực truyền thống phong phú.</p>
+                        <a href="#" class="view-more" data-modal="tay">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="section" id="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Di sản Văn hóa Độc đáo</h2>
+                <p class="section-subtitle">Bảo tồn và phát huy các giá trị văn hóa truyền thống của các dân tộc Lâm Đồng</p>
+            </div>
+            
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <img src="http://samtuoingoclinh.com/uploads/kontum/2014_09/nharongkontum1.jpg" 
+                         alt="Nhà Rông" 
+                         class="culture-image"
+                         data-modal="nharong">
+                    <div class="culture-content">
+                        <h3>Nhà Rông - Biểu tượng văn hóa</h3>
+                        <p>Kiến trúc độc đáo của đồng bào các dân tộc Tây Nguyên, nơi diễn ra các sinh hoạt cộng đồng quan trọng.</p>
+                        <a href="#" class="view-more" data-modal="nharong">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+                
+                <div class="culture-item">
+                    <img src="https://media.mia.vn/uploads/blog-du-lich/le-hoi-cong-chieng-tay-nguyen-gia-tri-van-hoa-ngan-doi-1635892223.jpg" 
+                         alt="Cồng Chiêng" 
+                         class="culture-image"
+                         data-modal="congchieng">
+                    <div class="culture-content">
+                        <h3>Không gian Văn hóa Cồng Chiêng</h3>
+                        <p>Di sản văn hóa phi vật thể của nhân loại được UNESCO công nhận, linh hồn của văn hóa Tây Nguyên.</p>
+                        <a href="#" class="view-more" data-modal="congchieng">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+                
+                <div class="culture-item">
+                    <img src="https://m.yodycdn.com/blog/trang-phuc-dan-toc-khmer-yodyvn2.jpg" 
+                         alt="Trang phục Khmer" 
+                         class="culture-image"
+                         data-modal="trangphuc">
+                    <div class="culture-content">
+                        <h3>Trang phục Truyền thống</h3>
+                        <p>Mỗi dân tộc có trang phục truyền thống độc đáo với hoa văn, màu sắc và chất liệu đặc trưng.</p>
+                        <a href="#" class="view-more" data-modal="trangphuc">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agriculture Section -->
+    <section class="section" id="agriculture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nông nghiệp Công nghệ cao</h2>
+                <p class="section-subtitle">Thế mạnh kinh tế của Lâm Đồng với các sản phẩm nông nghiệp chất lượng cao</p>
+            </div>
+            
+            <div class="agri-grid">
+                <div class="agri-card">
+                    <img src="https://www.elmueble.com/medio/2023/06/08/arbol-grano-cafe-frutos_83f4fed6_230608100224_1200x630.jpg" 
+                         alt="Cà phê" 
+                         class="agri-image"
+                         data-modal="cafe">
+                    <div class="agri-content">
+                        <h3>Cà phê Arabica</h3>
+                        <p>Lâm Đồng nổi tiếng với cà phê Arabica chất lượng cao, được trồng trên các vùng cao nguyên màu mỡ.</p>
+                        <a href="#" class="view-more" data-modal="cafe">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+                
+                <div class="agri-card">
+                    <img src="http://www.giatieu.com/wp-content/uploads/2015/01/vuon-tieu-cho-thu-hoach.jpg" 
+                         alt="Tiêu" 
+                         class="agri-image"
+                         data-modal="tieu">
+                    <div class="agri-content">
+                        <h3>Hồ tiêu chất lượng</h3>
+                        <p>Hồ tiêu Lâm Đồng với hương vị đặc trưng, được xuất khẩu đến nhiều thị trường quốc tế.</p>
+                        <a href="#" class="view-more" data-modal="tieu">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+                
+                <div class="agri-card">
+                    <img src="https://dulichbennghe.vn/wp-content/uploads/2020/03/ho-ta-%C4%91%C3%B9ng.jpg" 
+                         alt="Hồ Tà Đùng" 
+                         class="agri-image"
+                         data-modal="tadung">
+                    <div class="agri-content">
+                        <h3>Du lịch Nông nghiệp</h3>
+                        <p>Kết hợp nông nghiệp với du lịch sinh thái, tạo trải nghiệm độc đáo cho du khách.</p>
+                        <a href="#" class="view-more" data-modal="tadung">Xem thông tin chi tiết →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section video-section" id="video">
+        <div class="container">
+            <div class="section-title">
+                <h2>Khám phá Lâm Đồng qua Video</h2>
+                <p class="section-subtitle">Cảm nhận vẻ đẹp thiên nhiên và văn hóa Lâm Đồng qua những thước phim sống động</p>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/7IJDlbxX9Jk" title="Video giới thiệu Lâm Đồng" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Video giới thiệu vẻ đẹp thiên nhiên và văn hóa đa dạng của Lâm Đồng</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Lâm Đồng <span>Mới</span></div>
+                    <p>Website giới thiệu văn hóa đa dạng của 40 dân tộc anh em và tiềm năng phát triển của Lâm Đồng sau sáp nhập.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Các Dân Tộc</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-modal="kinh">Dân tộc Kinh</a></li>
+                        <li><a href="#" data-modal="mnong">Dân tộc M'Nông</a></li>
+                        <li><a href="#" data-modal="ede">Dân tộc Ê Đê</a></li>
+                        <li><a href="#" data-modal="tay">Dân tộc Tày</a></li>
+                        <li><a href="#" data-modal="khmer">Dân tộc Khmer</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Di sản Văn hóa</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-modal="congchieng">Không gian Cồng Chiêng</a></li>
+                        <li><a href="#" data-modal="nharong">Nhà Rông truyền thống</a></li>
+                        <li><a href="#" data-modal="trangphuc">Trang phục truyền thống</a></li>
+                        <li><a href="#">Lễ hội các dân tộc</a></li>
+                        <li><a href="#">Ẩm thực đặc sắc</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Liên hệ</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>Số 123, Đường Trần Phú, TP. Đà Lạt, Lâm Đồng</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>0263 1234 567</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>info@lamdongvanhoa.vn</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Lâm Đồng Mới - Bảo tồn và phát huy giá trị văn hóa các dân tộc. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dữ liệu modal
+        const modalData = {
+            'dalat': {
+                title: 'Thành phố Đà Lạt',
+                subtitle: 'Thành phố ngàn hoa',
+                description: 'Đà Lạt là thành phố trực thuộc tỉnh Lâm Đồng, nổi tiếng với khí hậu mát mẻ quanh năm, cảnh quan thiên nhiên tươi đẹp và kiến trúc Pháp cổ kính. Thành phố được mệnh danh là "Thành phố ngàn hoa" với các vườn hoa rực rỡ sắc màu.',
+                image: 'https://ahanetworkvietnam.files.wordpress.com/2021/09/da-lat.jpg',
+                details: [
+                    {title: 'Độ cao', content: '1.500m so với mực nước biển'},
+                    {title: 'Dân số', content: 'Khoảng 250.000 người'},
+                    {title: 'Khí hậu', content: 'Nhiệt độ trung bình 15-24°C'},
+                    {title: 'Điểm du lịch nổi bật', content: 'Hồ Xuân Hương, Thung lũng Tình yêu, Dinh Bảo Đại, Chợ Đà Lạt'}
+                ]
+            },
+            'kinh': {
+                title: 'Dân tộc Kinh',
+                subtitle: 'Dân tộc đa số tại Việt Nam',
+                description: 'Dân tộc Kinh chiếm đa số tại Lâm Đồng với khoảng 70% dân số. Họ đóng vai trò chủ đạo trong phát triển kinh tế - xã hội, đặc biệt trong lĩnh vực thương mại, dịch vụ và du lịch.',
+                image: 'http://sukienquanhta.net/wp-content/uploads/2022/07/Dan-toc-kinh-2.jpg',
+                details: [
+                    {title: 'Dân số tại Lâm Đồng', content: 'Khoảng 1,4 triệu người'},
+                    {title: 'Ngôn ngữ', content: 'Tiếng Việt'},
+                    {title: 'Tôn giáo chính', content: 'Phật giáo, Thiên chúa giáo, thờ cúng tổ tiên'},
+                    {title: 'Nghề truyền thống', content: 'Nông nghiệp, thủ công mỹ nghệ, buôn bán'}
+                ]
+            },
+            'mnong': {
+                title: 'Dân tộc M\'Nông',
+                subtitle: 'Cư dân bản địa Tây Nguyên',
+                description: 'Dân tộc M\'Nông là một trong những cư dân bản địa quan trọng của Tây Nguyên. Họ nổi tiếng với nghề dệt thổ cẩm tinh xảo, văn hóa cồng chiêng và các lễ hội truyền thống đặc sắc.',
+                image: 'https://topasecolodge.com/wp-content/uploads/2022/07/dan-toc-mong-den-sapa-black-hmong-sapa.jpeg',
+                details: [
+                    {title: 'Dân số tại Lâm Đồng', content: 'Khoảng 50.000 người'},
+                    {title: 'Ngôn ngữ', content: 'Tiếng M\'Nông (ngữ hệ Nam Á)'},
+                    {title: 'Nhà ở truyền thống', content: 'Nhà sàn dài'},
+                    {title: 'Nghề truyền thống', content: 'Làm rẫy, dệt thổ cẩm, đan lát, săn bắn'}
+                ]
+            },
+            'ede': {
+                title: 'Dân tộc Ê Đê',
+                subtitle: 'Chủ nhân của văn hóa cồng chiêng',
+                description: 'Dân tộc Ê Đê nổi tiếng với kiến trúc nhà dài độc đáo, văn hóa cồng chiêng được UNESCO công nhận là di sản văn hóa phi vật thể của nhân loại, và các lễ hội truyền thống đặc sắc.',
+                image: 'https://iced.edu.vn/wp-content/uploads/2024/11/dan-toc-e-de-1.jpg',
+                details: [
+                    {title: 'Dân số tại Lâm Đồng', content: 'Khoảng 40.000 người'},
+                    {title: 'Ngôn ngữ', content: 'Tiếng Ê Đê (ngữ hệ Nam Đảo)'},
+                    {title: 'Kiến trúc đặc trưng', content: 'Nhà dài (nhà sàn dài hàng trăm mét)'},
+                    {title: 'Di sản văn hóa', content: 'Không gian văn hóa cồng chiêng Tây Nguyên'}
+                ]
+            },
+            'tay': {
+                title: 'Dân tộc Tày',
+                subtitle: 'Nghệ nhân của thổ cẩm và âm nhạc',
+                description: 'Dân tộc Tày có nghề dệt thổ cẩm tinh xảo, nghệ thuật hát then đàn tính độc đáo và ẩm thực truyền thống phong phú. Họ là một trong những dân tộc có dân số đông tại Lâm Đồng.',
+                image: 'https://s3-ap-southeast-1.amazonaws.com/mytourcdn.com/resources/pictures/locations/ijn1410840980.jpg',
+                details: [
+                    {title: 'Dân số tại Lâm Đồng', content: 'Khoảng 35.000 người'},
+                    {title: 'Ngôn ngữ', content: 'Tiếng Tày (ngữ hệ Tai-Kadai)'},
+                    {title: 'Nghệ thuật truyền thống', content: 'Hát then, đàn tính, múa khèn'},
+                    {title: 'Ẩm thực đặc sắc', content: 'Cơm lam, thịt trâu gác bếp, rượu ngô'}
+                ]
+            },
+            'nharong': {
+                title: 'Nhà Rông',
+                subtitle: 'Trái tim của buôn làng Tây Nguyên',
+                description: 'Nhà Rông là kiến trúc độc đáo của đồng bào các dân tộc Tây Nguyên, được xem như trái tim của buôn làng. Đây là nơi diễn ra các sinh hoạt cộng đồng quan trọng như hội họp, lễ hội, tiếp khách.',
+                image: 'http://samtuoingoclinh.com/uploads/kontum/2014_09/nharongkontum1.jpg',
+                details: [
+                    {title: 'Chiều cao trung bình', content: '15-20 mét'},
+                    {title: 'Chất liệu chính', content: 'Gỗ, tre, nứa, lá tranh'},
+                    {title: 'Ý nghĩa văn hóa', content: 'Biểu tượng sức mạnh và sự đoàn kết cộng đồng'},
+                    {title: 'Công dụng', content: 'Nơi hội họp, tổ chức lễ hội, tiếp khách quý'}
+                ]
+            },
+            'congchieng': {
+                title: 'Không gian Văn hóa Cồng Chiêng',
+                subtitle: 'Di sản văn hóa phi vật thể UNESCO',
+                description: 'Không gian văn hóa cồng chiêng Tây Nguyên được UNESCO công nhận là Kiệt tác truyền khẩu và di sản văn hóa phi vật thể của nhân loại năm 2005. Cồng chiêng được xem là linh hồn của văn hóa Tây Nguyên.',
+                image: 'https://media.mia.vn/uploads/blog-du-lich/le-hoi-cong-chieng-tay-nguyen-gia-tri-van-hoa-ngan-doi-1635892223.jpg',
+                details: [
+                    {title: 'Di sản UNESCO', content: 'Được công nhận năm 2005'},
+                    {title: 'Số loại cồng chiêng', content: 'Hơn 20 loại với kích thước khác nhau'},
+                    {title: 'Ý nghĩa', content: 'Phương tiện giao tiếp với thần linh, biểu hiện đời sống tâm linh'},
+                    {title: 'Dịp sử dụng', content: 'Lễ hội, nghi lễ nông nghiệp, đám cưới, đám tang'}
+                ]
+            },
+            'trangphuc': {
+                title: 'Trang phục Truyền thống',
+                subtitle: 'Bản sắc văn hóa các dân tộc',
+                description: 'Mỗi dân tộc tại Lâm Đồng có trang phục truyền thống độc đáo với hoa văn, màu sắc và chất liệu đặc trưng. Trang phục không chỉ để mặc mà còn thể hiện bản sắc văn hóa, địa vị xã hội và tín ngưỡng.',
+                image: 'https://m.yodycdn.com/blog/trang-phuc-dan-toc-khmer-yodyvn2.jpg',
+                details: [
+                    {title: 'Chất liệu chính', content: 'Bông, tơ tằm, sợi lanh'},
+                    {title: 'Kỹ thuật trang trí', content: 'Thêu, dệt hoa văn, đính cườm, vẽ sáp ong'},
+                    {title: 'Màu sắc chủ đạo', content: 'Đen, chàm, đỏ, vàng, trắng'},
+                    {title: 'Ý nghĩa hoa văn', content: 'Thể hiện quan niệm vũ trụ, ước vọng cuộc sống'}
+                ]
+            },
+            'cafe': {
+                title: 'Cà phê Arabica Lâm Đồng',
+                subtitle: 'Hương vị đẳng cấp thế giới',
+                description: 'Lâm Đồng là vùng trồng cà phê Arabica chất lượng cao nhất Việt Nam. Với độ cao 1.000-1.600m, khí hậu mát mẻ và thổ nhưỡng bazan màu mỡ, cà phê Arabica Lâm Đồng có hương vị đậm đà, chua thanh và hậu vị kéo dài.',
+                image: 'https://www.elmueble.com/medio/2023/06/08/arbol-grano-cafe-frutos_83f4fed6_230608100224_1200x630.jpg',
+                details: [
+                    {title: 'Diện tích trồng', content: 'Khoảng 170.000 ha'},
+                    {title: 'Sản lượng hàng năm', content: 'Khoảng 400.000 tấn'},
+                    {title: 'Xuất khẩu', content: 'Trên 80 quốc gia và vùng lãnh thổ'},
+                    {title: 'Giống cà phê chính', content: 'Arabica, Robusta, Cherry'}
+                ]
+            },
+            'tieu': {
+                title: 'Hồ tiêu Lâm Đồng',
+                subtitle: 'Vàng đen của Tây Nguyên',
+                description: 'Hồ tiêu Lâm Đồng nổi tiếng với chất lượng cao, hương vị cay nồng đặc trưng và hàm lượng piperine cao. Tiêu được trồng chủ yếu ở các huyện Đạ Huoai, Đạ Tẻh, Cát Tiên với diện tích lớn.',
+                image: 'http://www.giatieu.com/wp-content/uploads/2015/01/vuon-tieu-cho-thu-hoach.jpg',
+                details: [
+                    {title: 'Diện tích trồng', content: 'Khoảng 30.000 ha'},
+                    {title: 'Sản lượng hàng năm', content: 'Khoảng 80.000 tấn'},
+                    {title: 'Xuất khẩu', content: 'Mỹ, EU, Trung Quốc, Ấn Độ'},
+                    {title: 'Giống tiêu chính', content: 'Tiêu Vĩnh Linh, tiêu Ấn Độ, tiêu sẻ'}
+                ]
+            },
+            'tadung': {
+                title: 'Hồ Tà Đùng',
+                subtitle: 'Vịnh Hạ Long trên cao nguyên',
+                description: 'Hồ Tà Đùng là hồ nước nhân tạo lớn nhất Tây Nguyên với diện tích mặt nước 5.000 ha và 47 đảo lớn nhỏ. Được ví như "Vịnh Hạ Long trên cao nguyên", hồ Tà Đùng là điểm du lịch sinh thái hấp dẫn với cảnh quan thiên nhiên hùng vĩ.',
+                image: 'https://dulichbennghe.vn/wp-content/uploads/2020/03/ho-ta-%C4%91%C3%B9ng.jpg',
+                details: [
+                    {title: 'Diện tích mặt nước', content: '5.000 ha'},
+                    {title: 'Số đảo', content: '47 đảo lớn nhỏ'},
+                    {title: 'Độ cao', content: '1.200m so với mực nước biển'},
+                    {title: 'Hoạt động du lịch', content: 'Chèo thuyền kayak, câu cá, trekking, ngắm cảnh'}
+                ]
+            }
+        };
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalDetails = document.getElementById('modalDetails');
+        
+        // Open modal when clicking on images or view more links
+        document.addEventListener('click', function(e) {
+            // Check if clicked element has data-modal attribute
+            const modalKey = e.target.getAttribute('data-modal');
+            
+            if (modalKey && modalData[modalKey]) {
+                e.preventDefault();
+                const data = modalData[modalKey];
+                
+                // Set modal content
+                modalImg.src = data.image;
+                modalImg.alt = data.title;
+                modalTitle.textContent = data.title;
+                modalSubtitle.textContent = data.subtitle;
+                modalDescription.textContent = data.description;
+                
+                // Clear and add details
+                modalDetails.innerHTML = '';
+                data.details.forEach(detail => {
+                    const detailItem = document.createElement('div');
+                    detailItem.className = 'detail-item';
+                    detailItem.innerHTML = `
+                        <div class="detail-title">${detail.title}</div>
+                        <div>${detail.content}</div>
+                    `;
+                    modalDetails.appendChild(detailItem);
+                });
+                
+                // Show modal
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        });
+        
+        // Close modal
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        modalClose.addEventListener('click', closeModal);
+        
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                // Don't prevent default if it's a modal link
+                if (!this.getAttribute('data-modal')) {
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
